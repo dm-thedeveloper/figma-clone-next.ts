@@ -15,7 +15,11 @@ import FlyingReaction from './reaction/FlyingReaction'
 import useInterval from '@/hooks/useInterval'
 import { useEventListener } from '@liveblocks/react'
 
-const Live = () => {
+type Props = {
+  canvasRef: React.MutableRefObject<HTMLCanvasElement | null>
+}
+
+const Live = ({ canvasRef }: Props) => {
   const others = useOthers()
   // console.log('Others : ', others)
 
@@ -197,8 +201,11 @@ const Live = () => {
       onPointerDown={handlPointerDown}
       onPointerUp={handlePointerUp}
       className="border-2 h-[500px] w-full relative overflow-hidden select-none"
+      id="canvas"
+      style={{ border: '5px solid red' }}
     >
-      <h1 className="text-5xl">Hello World</h1>
+      <h1 className="text-5xl ">Hello World</h1>
+      <canvas ref={canvasRef} className="border-2 border-red-700" />
       <LiveCursor others={others} />
 
       {/* Render the reactions */}

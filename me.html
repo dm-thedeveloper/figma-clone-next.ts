@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Canvas Example</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="200"
+      style="border: 1px solid #000000"
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById('myCanvas')
+      const ctx = canvas.getContext('2d') // Get the 2D rendering context
+
+      // Example: Drawing a rectangle
+      ctx.fillStyle = 'blue'
+      ctx.fillRect(50, 50, 100, 75) // x, y, width, height
+    </script>
+  </body>
+</html>
